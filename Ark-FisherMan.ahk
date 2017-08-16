@@ -6,13 +6,24 @@
 ; Github: spencerjpotts
 ; 
 ; ----------------------------
+
+IF NOT A_IsAdmin
+{
+   Run *RunAs "%A_ScriptFullPath%"
+   ExitApp
+}
+
+#SingleInstance Force
+
 ;;F6 = Break Script
 F6::
+soundbeep
 	i := 1
 	return
 
 ;;F5 = Run Script "F5"
 F5::
+soundbeep
 	i 			:= 0
 	color 		 = 0xFFFFFF
 	speed 		 = 150
